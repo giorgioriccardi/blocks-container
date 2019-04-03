@@ -16,13 +16,19 @@ import './block-container/styles/style.css';
 import './block-container/styles/editor.scss';
 
 // Components
-const { __ } = wp.i18n;
+const {
+	__
+} = wp.i18n;
 
 // Extend component
-const { Component } = wp.element;
+const {
+	Component
+} = wp.element;
 
 // Register block
-const { registerBlockType } = wp.blocks;
+const {
+	registerBlockType
+} = wp.blocks;
 
 // Register editor components
 const {
@@ -123,76 +129,109 @@ class ABContainerBlock extends Component {
 		} = this.props;
 
 		const onSelectImage = img => {
-			setAttributes( {
+			setAttributes({
 				containerImgID: img.id,
 				containerImgURL: img.url,
 				containerImgAlt: img.alt,
-			} );
+			});
 		};
 
 		return [
 			// Show the alignment toolbar on focus
-			<BlockControls>
-				<BlockAlignmentToolbar
-					value={ containerWidth }
-					onChange={ containerWidth => setAttributes( { containerWidth } ) }
-					controls={ [ 'center', 'full' ] }
-				/>
-			</BlockControls>,
+			<
+			BlockControls >
+			<
+			BlockAlignmentToolbar
+			value = {
+				containerWidth
+			}
+			onChange = {
+				containerWidth => setAttributes({
+					containerWidth
+				})
+			}
+			controls = {
+				['center', 'full']
+			}
+			/> <
+			/BlockControls>,
 			// Show the block controls on focus
-			<Inspector
-				{ ...{ setAttributes, ...this.props } }
+			<
+			Inspector {
+				...{
+					setAttributes,
+					...this.props
+				}
+			}
 			/>,
 			// Show the container markup in the editor
-			<Container { ...this.props }>
-				<div className="ab-container-inside">
-					{ containerImgURL && !! containerImgURL.length && (
-						<div className="ab-container-image-wrap">
-							<img
-								className={ classnames(
-									'ab-container-image',
-									dimRatioToClass( containerDimRatio ),
-									{
-										'has-background-dim': containerDimRatio !== 0,
-									}
-								) }
-								src={ containerImgURL }
-								alt={ containerImgAlt }
-							/>
-						</div>
-					) }
+			<
+			Container {
+				...this.props
+			} >
+			<
+			div className = "ab-container-inside" > {
+				containerImgURL && !!containerImgURL.length && ( <
+					div className = "ab-container-image-wrap" >
+					<
+					img className = {
+						classnames(
+							'ab-container-image',
+							dimRatioToClass(containerDimRatio), {
+								'has-background-dim': containerDimRatio !== 0,
+							}
+						)
+					}
+					src = {
+						containerImgURL
+					}
+					alt = {
+						containerImgAlt
+					}
+					/> <
+					/div>
+				)
+			}
 
-					<div
-						className="ab-container-content"
-						style={ {
-							maxWidth: `${containerMaxWidth}px`,
-						} }
-					>
-						<InnerBlocks />
-					</div>
-				</div>
-			</Container>
+			<
+			div
+			className = "ab-container-content"
+			style = {
+				{
+					maxWidth: `${containerMaxWidth}px`,
+				}
+			} >
+			<
+			InnerBlocks / >
+			<
+			/div> <
+			/div> <
+			/Container>
 		];
 	}
 }
 
 // Register the block
-registerBlockType( 'atomic-blocks/ab-container', {
-	title: __( 'AB Container', 'atomic-blocks' ),
-	description: __( 'Add a container block to wrap several blocks in a parent container.', 'atomic-blocks' ),
+registerBlockType('atomic-blocks/ab-container', {
+	title: __('SSWS Container', 'atomic-blocks'),
+	description: __('Add a container block to wrap several blocks in a parent container.', 'atomic-blocks'),
 	icon: 'editor-table',
 	category: 'atomic-blocks',
 	keywords: [
-		__( 'container', 'atomic-blocks' ),
-		__( 'section', 'atomic-blocks' ),
-		__( 'atomic', 'atomic-blocks' ),
+		__('container', 'atomic-blocks'),
+		__('section', 'atomic-blocks'),
+		__('atomic', 'atomic-blocks'),
 	],
 
 	attributes: blockAttributes,
 
-	getEditWrapperProps( { containerWidth } ) {
-		if ( 'left' === containerWidth || 'right' === containerWidth || 'full' === containerWidth ) {
-			return { 'data-align': containerWidth };
+	getEditWrapperProps({
+		containerWidth
+	}) {
+		if ('left' === containerWidth || 'right' === containerWidth || 'full' === containerWidth) {
+			return {
+				'data-align': containerWidth
+			};
 		}
 	},
 
@@ -200,7 +239,7 @@ registerBlockType( 'atomic-blocks/ab-container', {
 	edit: ABContainerBlock,
 
 	// Save the attributes and markup
-	save: function( props ) {
+	save: function (props) {
 
 		// Setup the attributes
 		const {
@@ -220,50 +259,63 @@ registerBlockType( 'atomic-blocks/ab-container', {
 		} = props.attributes;
 
 		// Save the block markup for the front end
-		return (
-			<Container { ...props }>
-				<div className="ab-container-inside">
-					{ containerImgURL && !! containerImgURL.length && (
-						<div className="ab-container-image-wrap">
-							<img
-								className={ classnames(
-									'ab-container-image',
-									dimRatioToClass( containerDimRatio ),
-									{
-										'has-background-dim': containerDimRatio !== 0,
-									}
-								) }
-								src={ containerImgURL }
-								alt={ containerImgAlt }
-							/>
-						</div>
-					) }
+		return ( <
+			Container {
+				...props
+			} >
+			<
+			div className = "ab-container-inside" > {
+				containerImgURL && !!containerImgURL.length && ( <
+					div className = "ab-container-image-wrap" >
+					<
+					img className = {
+						classnames(
+							'ab-container-image',
+							dimRatioToClass(containerDimRatio), {
+								'has-background-dim': containerDimRatio !== 0,
+							}
+						)
+					}
+					src = {
+						containerImgURL
+					}
+					alt = {
+						containerImgAlt
+					}
+					/> <
+					/div>
+				)
+			}
 
-					<div
-						className="ab-container-content"
-						style={ {
-							maxWidth: `${containerMaxWidth}px`,
-						} }
-					>
-						<InnerBlocks.Content />
-					</div>
-				</div>
-			</Container>
+			<
+			div className = "ab-container-content"
+			style = {
+				{
+					maxWidth: `${containerMaxWidth}px`,
+				}
+			} >
+			<
+			InnerBlocks.Content / >
+			<
+			/div> <
+			/div> <
+			/Container>
 		);
 	},
 
 	// deprecated: deprecated,
 
-} );
+});
 
-function dimRatioToClass( ratio ) {
-	return ( ratio === 0 || ratio === 50 ) ?
+function dimRatioToClass(ratio) {
+	return (ratio === 0 || ratio === 50) ?
 		null :
-		'has-background-dim-' + ( 10 * Math.round( ratio / 10 ) );
+		'has-background-dim-' + (10 * Math.round(ratio / 10));
 }
 
-function backgroundImageStyles( url ) {
-	return url ?
-		{ backgroundImage: `url(${ url })` } :
+function backgroundImageStyles(url) {
+	return url ? {
+			backgroundImage: `url(${ url })`
+		} :
 		undefined;
 }
