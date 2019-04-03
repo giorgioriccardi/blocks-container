@@ -2,7 +2,7 @@
 /**
  * Plugin Name: SSWS Blocks Container
  * Plugin URI: https://ssws.ca
- * Description: Gutenberg blocks container to help you create useful templates with the new WordPress editor.
+ * Description: Gutenberg blocks container to help you create useful and reusable front-end templates with the new WordPress editor.
  * Author: Giorgio Riccardi
  * Author URI: http://seatoskywebsolutions.ca
  * Version: 1.2.1
