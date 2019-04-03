@@ -34,7 +34,7 @@ export default class Container extends Component {
 
 		const className = classnames( [
 			this.props.className,
-			'ab-block-container',
+			'ssws-blocks-container',
 		], {
 			[ 'align' + containerWidth ]: containerWidth,
 		} )

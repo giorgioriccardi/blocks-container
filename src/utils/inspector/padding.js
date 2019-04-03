@@ -46,7 +46,7 @@ export default function Padding( props ) {
         <Fragment>
             { paddingEnableTop && (
                 <RangeControl
-                    label={ __( 'Padding Top', 'atomic-blocks' ) }
+                    label={ __( 'Padding Top', 'ssws-blocks-container' ) }
                     value={ paddingTop }
                     min={ paddingTopMin }
                     max={ paddingTopMax }
@@ -55,7 +55,7 @@ export default function Padding( props ) {
             ) }
             { paddingEnableRight && (
                 <RangeControl
-                    label={ __( 'Padding Right', 'atomic-blocks' ) }
+                    label={ __( 'Padding Right', 'ssws-blocks-container' ) }
                     value={ paddingRight }
                     min={ paddingRightMin }
                     max={ paddingRightMax }
@@ -64,7 +64,7 @@ export default function Padding( props ) {
             ) }
             { paddingEnableBottom && (
                 <RangeControl
-                    label={ __( 'Padding Bottom', 'atomic-blocks' ) }
+                    label={ __( 'Padding Bottom', 'ssws-blocks-container' ) }
                     value={ paddingBottom }
                     min={ paddingBottomMin }
                     max={ paddingBottomMax }
@@ -73,7 +73,7 @@ export default function Padding( props ) {
             ) }
             { paddingEnableLeft && (
                 <RangeControl
-                    label={ __( 'Padding Left', 'atomic-blocks' ) }
+                    label={ __( 'Padding Left', 'ssws-blocks-container' ) }
                     value={ paddingLeft }
                     min={ paddingLeftMin }
                     max={ paddingLeftMax }
@@ -82,7 +82,7 @@ export default function Padding( props ) {
             ) }
             { paddingEnableVertical && (
                 <RangeControl
-                    label={ __( 'Padding Vertical', 'atomic-blocks' ) }
+                    label={ __( 'Padding Vertical', 'ssws-blocks-container' ) }
                     value={ paddingVertical }
                     min={ paddingVerticalMin }
                     max={ paddingVerticalMax }
@@ -91,7 +91,7 @@ export default function Padding( props ) {
             ) }
             { paddingEnableHorizontal && (
                 <RangeControl
-                    label={ __( 'Padding Horizontal', 'atomic-blocks' ) }
+                    label={ __( 'Padding Horizontal', 'ssws-blocks-container' ) }
                     value={ paddingHorizontal }
                     min={ paddingHorizontalMin }
                     max={ paddingHorizontalMax }

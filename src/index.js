@@ -1,19 +1,19 @@
 /**
- * BLOCK: Atomic Blocks Container
+ * BLOCK: SSWS Blocks Container
  */
 
 // Import block dependencies and components
 import classnames from 'classnames';
-import Inspector from './block-container/components/inspector';
-import Container from './block-container/components/container';
+import Inspector from './blocks-container/components/inspector';
+import Container from './blocks-container/components/container';
 
 // Deprecated components
-// import deprecated from './block-container/deprecated/deprecated';
+// import deprecated from './blocks-container/deprecated/deprecated';
 
 // Import CSS
-import './block-container/styles/style.scss';
-import './block-container/styles/style.css';
-import './block-container/styles/editor.scss';
+// import './blocks-container/styles/style.scss';
+import './blocks-container/styles/style.css';
+// import './blocks-container/styles/editor.scss';
 
 // Components
 const {
@@ -100,7 +100,7 @@ const blockAttributes = {
 	},
 };
 
-class ABContainerBlock extends Component {
+class SSWSBlocksContainer extends Component {
 
 	render() {
 
@@ -170,13 +170,13 @@ class ABContainerBlock extends Component {
 				...this.props
 			} >
 			<
-			div className = "ab-container-inside" > {
+			div className = "ssws-container-inside" > {
 				containerImgURL && !!containerImgURL.length && ( <
-					div className = "ab-container-image-wrap" >
+					div className = "ssws-container-image-wrap" >
 					<
 					img className = {
 						classnames(
-							'ab-container-image',
+							'ssws-container-image',
 							dimRatioToClass(containerDimRatio), {
 								'has-background-dim': containerDimRatio !== 0,
 							}
@@ -195,7 +195,7 @@ class ABContainerBlock extends Component {
 
 			<
 			div
-			className = "ab-container-content"
+			className = "ssws-container-content"
 			style = {
 				{
 					maxWidth: `${containerMaxWidth}px`,
@@ -212,15 +212,15 @@ class ABContainerBlock extends Component {
 }
 
 // Register the block
-registerBlockType('atomic-blocks/ab-container', {
-	title: __('SSWS Container', 'atomic-blocks'),
-	description: __('Add a container block to wrap several blocks in a parent container.', 'atomic-blocks'),
-	icon: 'editor-table',
-	category: 'atomic-blocks',
+registerBlockType('ssws-blocks/ssws-container', {
+	title: __('SSWS Container', 'ssws-blocks-container'),
+	description: __('Add a blocks container to wrap several blocks in a parent container.', 'ssws-blocks-container'),
+	icon: 'smiley',
+	category: 'common',
 	keywords: [
-		__('container', 'atomic-blocks'),
-		__('section', 'atomic-blocks'),
-		__('atomic', 'atomic-blocks'),
+		__('container', 'ssws-blocks-container'),
+		__('section', 'ssws-blocks-container'),
+		__('ssws', 'ssws-blocks-container'),
 	],
 
 	attributes: blockAttributes,
@@ -236,7 +236,7 @@ registerBlockType('atomic-blocks/ab-container', {
 	},
 
 	// Render the block components
-	edit: ABContainerBlock,
+	edit: SSWSBlocksContainer,
 
 	// Save the attributes and markup
 	save: function (props) {
@@ -264,13 +264,13 @@ registerBlockType('atomic-blocks/ab-container', {
 				...props
 			} >
 			<
-			div className = "ab-container-inside" > {
+			div className = "ssws-container-inside" > {
 				containerImgURL && !!containerImgURL.length && ( <
-					div className = "ab-container-image-wrap" >
+					div className = "ssws-container-image-wrap" >
 					<
 					img className = {
 						classnames(
-							'ab-container-image',
+							'ssws-container-image',
 							dimRatioToClass(containerDimRatio), {
 								'has-background-dim': containerDimRatio !== 0,
 							}
@@ -288,7 +288,7 @@ registerBlockType('atomic-blocks/ab-container', {
 			}
 
 			<
-			div className = "ab-container-content"
+			div className = "ssws-container-content"
 			style = {
 				{
 					maxWidth: `${containerMaxWidth}px`,

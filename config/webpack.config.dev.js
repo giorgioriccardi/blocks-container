@@ -57,14 +57,14 @@ const extractConfig = {
 			},
 		},
 		// "sass" loader converst SCSS to CSS.
-		{
-			loader: 'sass-loader',
-			options: {
-				// Add common CSS file for variables and mixins.
-				data: '@import "./src/common.scss";\n',
-				outputStyle: 'nested',
-			},
-		},
+		// {
+		// 	loader: 'sass-loader',
+		// 	options: {
+		// 		// Add common CSS file for variables and mixins.
+		// 		data: '@import "./src/common.scss";\n',
+		// 		outputStyle: 'nested',
+		// 	},
+		// },
 	],
 };
 

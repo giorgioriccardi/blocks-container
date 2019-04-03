@@ -5,7 +5,7 @@
  * Enqueue CSS/JS of all the blocks.
  *
  * @since   1.0.0
- * @package Atomic Blocks
+ * @package SSWS Blocks Container
  */
 
 // Exit if accessed directly.
@@ -18,20 +18,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-function atomic_blocks_block_assets() {
+function ssws_blocks_block_assets() {
 
 	// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison -- Could be true or 'true'.
 	$postfix = ( SCRIPT_DEBUG == true ) ? '' : '.min';
 
 	// Load the compiled styles.
 	wp_register_style(
-		'atomic-blocks-style-css',
+		'ssws-blocks-style-css',
 		plugins_url( 'dist/blocks.style.build.css', dirname( __FILE__ ) ),
 		array(),
 		filemtime( plugin_dir_path( __FILE__ ) . 'blocks.style.build.css' )
 	);
 }
-add_action( 'init', 'atomic_blocks_block_assets' );
+add_action( 'init', 'ssws_blocks_block_assets' );
 
 
 /**
@@ -39,14 +39,14 @@ add_action( 'init', 'atomic_blocks_block_assets' );
  *
  * @since 1.0.0
  */
-function atomic_blocks_editor_assets() {
+function ssws_blocks_editor_assets() {
 
 	// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison -- Could be true or 'true'.
 	$postfix = ( SCRIPT_DEBUG == true ) ? '' : '.min';
 
 	// Load the compiled blocks into the editor.
 	wp_enqueue_script(
-		'atomic-blocks-block-js',
+		'ssws-blocks-block-js',
 		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'blocks.build.js' ),
@@ -54,23 +54,23 @@ function atomic_blocks_editor_assets() {
 	);
 
 	// Load the compiled styles into the editor.
-	wp_enqueue_style(
-		'atomic-blocks-block-editor-css',
-		plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'blocks.editor.build.css' )
-	);
+	// wp_enqueue_style(
+	// 	'ssws-blocks-block-editor-css',
+	// 	plugins_url( 'dist/blocks.editor.build.css', dirname( __FILE__ ) ),
+	// 	array( 'wp-edit-blocks' ),
+	// 	filemtime( plugin_dir_path( __FILE__ ) . 'blocks.editor.build.css' )
+	// );
 
 	// Pass in REST URL.
 	wp_localize_script(
-		'atomic-blocks-block-js',
-		'atomic_globals',
+		'ssws-blocks-block-js',
+		'ssws_globals',
 		array(
 			'rest_url' => esc_url( rest_url() ),
 		)
 	);
 }
-add_action( 'enqueue_block_editor_assets', 'atomic_blocks_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'ssws_blocks_editor_assets' );
 
 
 /**
@@ -78,33 +78,33 @@ add_action( 'enqueue_block_editor_assets', 'atomic_blocks_editor_assets' );
  *
  * @since 1.0.0
  */
-function atomic_blocks_frontend_assets() {
+function ssws_blocks_frontend_assets() {
 	// Load the dismissible notice js.
 	wp_enqueue_script(
-		'atomic-blocks-dismiss-js',
+		'ssws-blocks-dismiss-js',
 		plugins_url( '/dist/assets/js/dismiss.js', dirname( __FILE__ ) ),
 		array( 'jquery' ),
 		filemtime( plugin_dir_path( __FILE__ ) . '/assets/js/dismiss.js' ),
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'atomic_blocks_frontend_assets' );
+add_action( 'wp_enqueue_scripts', 'ssws_blocks_frontend_assets' );
 
-add_filter( 'block_categories', 'atomic_blocks_add_custom_block_category' );
+add_filter( 'block_categories', 'ssws_blocks_add_custom_block_category' );
 /**
- * Adds the Atomic Blocks block category.
+ * Adds the SSWS Blocks block category.
  *
  * @param array $categories Existing block categories.
  *
  * @return array Updated block categories.
  */
-function atomic_blocks_add_custom_block_category( $categories ) {
+function ssws_blocks_add_custom_block_category( $categories ) {
 	return array_merge(
 		$categories,
 		array(
 			array(
-				'slug'  => 'atomic-blocks',
-				'title' => __( 'Atomic Blocks', 'atomic-blocks' ),
+				'slug'  => 'ssws-blocks',
+				'title' => __( 'SSWS Blocks', 'ssws-blocks' ),
 			),
 		)
 	);
