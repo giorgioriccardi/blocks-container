@@ -1,0 +1,47 @@
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# OS or Editor folders
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+config.codekit
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+.idea
+node_modules/
+vendor/
+
+# Build files
+Gruntfile.js
+package-lock.json
+composer.lock
+dist/blocks.build.js
+dist/blocks.editor.build.css
+dist/blocks.style.build.css
