@@ -40,8 +40,99 @@ vendor/
 
 # Build files
 Gruntfile.js
+# there's no Grunt anyways!
 package-lock.json
 composer.lock
-dist/blocks.build.js
-dist/blocks.editor.build.css
-dist/blocks.style.build.css
+# dist/blocks.build.js
+# dist/blocks.editor.build.css
+# dist/blocks.style.build.css
+
+###################
+###################
+## General rules of thumb
+###################
+###################
+
+# WordPress stuff #
+###################
+*.log
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/mu-plugins/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+*.sql
+
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+# Front End #
+#############
+# Files injected by scripts/update-env.py:
+/.babelrc
+/.eslintrc
+/.editorconfig
+/.sass-lint.yml
+/.pre-commit-config.yaml
+/scripts/update-env.py
+README-frontend.md
+
+# Npm stuff #
+#############
+node_modules
+.tmp
+bower_components
+.env
+package-lock.json
+
+# Test automation #
+###################
+test/bower_components
+test/allure-report
+test/allure-results
+test/error-shots
+test/logs
+test/screenshots/diff
+test/screenshots/taken

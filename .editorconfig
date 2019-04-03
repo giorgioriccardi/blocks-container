@@ -4,6 +4,8 @@
 # WordPress Coding Standards
 # https://make.wordpress.org/core/handbook/coding-standards/
 
+## this file won't change!
+
 root = true
 
 [*]
