@@ -4,15 +4,16 @@
 
 // Import block dependencies and components
 import classnames from 'classnames';
-import Inspector from './components/inspector';
-import Container from './components/container';
+import Inspector from './block-container/components/inspector';
+import Container from './block-container/components/container';
 
 // Deprecated components
-import deprecated from './deprecated/deprecated';
+// import deprecated from './block-container/deprecated/deprecated';
 
 // Import CSS
-import './styles/style.scss';
-import './styles/editor.scss';
+import './block-container/styles/style.scss';
+import './block-container/styles/editor.scss';
+import './block-container/styles/style.css';
 
 // Components
 const { __ } = wp.i18n;
@@ -251,7 +252,7 @@ registerBlockType( 'atomic-blocks/ab-container', {
 		);
 	},
 
-	deprecated: deprecated,
+	// deprecated: deprecated,
 
 } );
 
