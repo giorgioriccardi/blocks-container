@@ -12,7 +12,7 @@ import Container from './blocks-container/components/container';
 
 // Import CSS
 // import './blocks-container/styles/style.scss';
-import './blocks-container/styles/style.css';
+// import './blocks-container/styles/style.css';
 // import './blocks-container/styles/editor.scss';
 
 // Components

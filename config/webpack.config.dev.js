@@ -25,14 +25,14 @@ const autoprefixer = require( 'autoprefixer' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 
 // Extract style.css for both editor and frontend styles.
-const blocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.style.build.css',
-} );
+// const blocksCSSPlugin = new ExtractTextPlugin( {
+// 	filename: './dist/blocks.style.build.css',
+// } );
 
 // Extract editor.css for editor styles.
-const editBlocksCSSPlugin = new ExtractTextPlugin( {
-	filename: './dist/blocks.editor.build.css',
-} );
+// const editBlocksCSSPlugin = new ExtractTextPlugin( {
+// 	filename: './dist/blocks.editor.build.css',
+// } );
 
 // Configuration for the ExtractTextPlugin — DRY rule.
 const extractConfig = {
@@ -98,20 +98,20 @@ module.exports = {
 					},
 				},
 			},
-			{
-				test: /style\.s?css$/,
-				exclude: /(node_modules|bower_components)/,
-				use: blocksCSSPlugin.extract( extractConfig ),
-			},
-			{
-				test: /editor\.s?css$/,
-				exclude: /(node_modules|bower_components)/,
-				use: editBlocksCSSPlugin.extract( extractConfig ),
-			},
+			// {
+			// 	test: /style\.s?css$/,
+			// 	exclude: /(node_modules|bower_components)/,
+			// 	use: blocksCSSPlugin.extract( extractConfig ),
+			// },
+			// {
+			// 	test: /editor\.s?css$/,
+			// 	exclude: /(node_modules|bower_components)/,
+			// 	use: editBlocksCSSPlugin.extract( extractConfig ),
+			// },
 		],
 	},
 	// Add plugins.
-	plugins: [ blocksCSSPlugin, editBlocksCSSPlugin ],
+	// plugins: [ blocksCSSPlugin ],
 	stats: 'minimal',
 	// stats: 'errors-only',
 };

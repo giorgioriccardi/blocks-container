@@ -24,5 +24,5 @@ $ npm run build
 - ~~improve and speed-up dependencies build~~
 - ~~`browserSync.reload` stops recursive tasks~~
 - ~~Re-organize modules order~~
-- Open Core Track Ticket
+- Open WordPRess Core Track Ticket
 - How to make this re-usable template a single instance once opened in another page/post?
