@@ -52,14 +52,14 @@ const extractConfig = {
 // Export configuration.
 module.exports = {
 	entry: {
-		'./dist/blocks.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
+		'./dist/blocksContainer.build': paths.pluginBlocksJs, // 'name' : 'path/file.ext'.
 	},
 	output: {
 		// Add /* filename */ comments to generated require()s in the output.
 		pathinfo: true,
 		// The dist folder.
 		path: paths.pluginDist,
-		filename: '[name].js', // [name] = './dist/blocks.build' as defined above.
+		filename: '[name].js', // [name] = './dist/blocksContainer.build' as defined above.
 	},
 	// You may want 'eval' instead if you prefer to see the compiled output in DevTools.
 	devtool: 'cheap-eval-source-map',

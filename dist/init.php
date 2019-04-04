@@ -22,9 +22,9 @@ function ssws_blocks_editor_assets() {
 	// Load the compiled blocks into the editor.
 	wp_enqueue_script(
 		'ssws-blocks-block-js',
-		plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) ),
+		plugins_url( '/dist/blocksContainer.build.js', dirname( __FILE__ ) ),
 		array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'blocks.build.js' ),
+		filemtime( plugin_dir_path( __FILE__ ) . 'blocksContainer.build.js' ),
 		false
 	);
 

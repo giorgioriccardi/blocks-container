@@ -34,7 +34,7 @@ const formatWebpackMessages = require( cgbDevUtilsPath +
 
 // Build file paths.
 const theCWD = process.cwd();
-const fileBuildJS = path.resolve( theCWD, './dist/blocks.build.js' );;
+const fileBuildJS = path.resolve( theCWD, './dist/blocksContainer.build.js' );;
 
 /**
  * Get File Size
@@ -117,7 +117,7 @@ async function build( webpackConfig ) {
 			'\n\n',
 			getFileSize( fileBuildJS ),
 			`${ chalk.dim( '— ./dist/' ) }`,
-			`${ chalk.green( 'blocks.build.js' ) }`,
+			`${ chalk.green( 'blocksContainer.build.js' ) }`,
 			'\n\n'
 		);
 

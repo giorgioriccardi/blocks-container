@@ -21,7 +21,7 @@ $ npm run build
  */
 
 function ssws_blocks_editor_assets() {
-	wp_enqueue_script( 'ssws_blocks_container', get_template_directory_uri() . '/js/blocks.build.js',
+	wp_enqueue_script( 'blocksContainer', get_template_directory_uri() . '/js/blocksContainer.build.js',
 	array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' )
 	);
 }
