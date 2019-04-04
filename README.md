@@ -15,7 +15,8 @@ $ npm run build
 ```
 
 ### Todo
-- Clean-up messy code and comments
+- Remove REACT functions and unused portions
+- ~~Clean-up messy code and comments~~
 - Refine instructions
 - Update dependencies
 - ~~`es6-promise 3.1.2->4.2.5`~~
