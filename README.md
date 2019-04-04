@@ -1,4 +1,6 @@
 # SSWS Gutenberg Blocks Container
+*This is just a prototype for now*
+**Do NOT use into production**
 Gutenberg blocks container helps you create useful and reusable front-end templates with the new WordPress editor.
 
 # How to use `Blocks Container`
@@ -31,6 +33,7 @@ add_action( 'admin_enqueue_scripts', 'ssws_blocks_editor_assets' );
 ### Todo
 - Remove REACT functions and unused portions
 - ~~Clean-up messy code and comments~~
+- Review/Restore css creation
 - Refine instructions
 - Review `blockAttributes` properties
 - Update dependencies

@@ -29,3 +29,13 @@ function ssws_blocks_container_loader() {
 	require_once plugin_dir_path( __FILE__ ) . 'dist/init.php';
 }
 add_action( 'plugins_loaded', 'ssws_blocks_container_loader' );
+
+/**
+ * Add image sizes
+ */
+function ssws_blocks_container_image_sizes() {
+	// Post Grid Block.
+	add_image_size( 'ssws-block-post-grid-landscape', 600, 400, true );
+	add_image_size( 'ssws-block-post-grid-square', 600, 600, true );
+}
+// add_action( 'after_setup_theme', 'ssws_blocks_container_image_sizes' );
