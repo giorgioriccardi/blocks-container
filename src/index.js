@@ -7,14 +7,6 @@ import classnames from 'classnames';
 import Inspector from './blocks-container/components/inspector';
 import Container from './blocks-container/components/container';
 
-// Deprecated components
-// import deprecated from './blocks-container/deprecated/deprecated';
-
-// Import CSS
-// import './blocks-container/styles/style.scss';
-// import './blocks-container/styles/style.css';
-// import './blocks-container/styles/editor.scss';
-
 // Components
 const {
 	__
