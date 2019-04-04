@@ -212,8 +212,7 @@ registerBlockType('ssws-blocks/ssws-container', {
 	keywords: [
 		__('container', 'ssws-blocks-container'),
 		__('section', 'ssws-blocks-container'),
-		__('reusable', 'ssws-blocks-container'),
-		__('ssws', 'ssws-blocks-container')
+		__('reusable', 'ssws-blocks-container')
 	],
 
 	attributes: blockAttributes,
