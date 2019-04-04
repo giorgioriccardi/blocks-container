@@ -14,6 +14,20 @@ $ npm install
 $ npm run build
 ```
 
+### Use this snippet in functions.php of your theme to avoid plugin implementation
+```
+/**
+ * Enqueue custom Gutenberg block scripts.
+ */
+
+function ssws_blocks_editor_assets() {
+	wp_enqueue_script( 'ssws_blocks_container', get_template_directory_uri() . '/js/blocks.build.js',
+	array( 'wp-blocks', 'wp-i18n', 'wp-element', 'wp-components', 'wp-editor' )
+	);
+}
+add_action( 'admin_enqueue_scripts', 'ssws_blocks_editor_assets' );
+```
+
 ### Todo
 - Remove REACT functions and unused portions
 - ~~Clean-up messy code and comments~~

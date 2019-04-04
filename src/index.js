@@ -15,7 +15,7 @@ const {
 // Extend component
 const {
 	Component
-} = wp.element;
+} = wp.element; // Import the element creator function (React abstraction layer)
 
 // Register block
 const {
