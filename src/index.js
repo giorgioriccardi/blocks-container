@@ -205,14 +205,15 @@ class SSWSBlocksContainer extends Component {
 
 // Register the block
 registerBlockType('ssws-blocks/ssws-container', {
-	title: __('SSWS Container', 'ssws-blocks-container'),
+	title: __('SSWS Blocks Container', 'ssws-blocks-container'),
 	description: __('Add a blocks container to wrap several blocks in a parent container.', 'ssws-blocks-container'),
 	icon: 'smiley',
 	category: 'common',
 	keywords: [
 		__('container', 'ssws-blocks-container'),
 		__('section', 'ssws-blocks-container'),
-		__('ssws', 'ssws-blocks-container'),
+		__('reusable', 'ssws-blocks-container'),
+		__('ssws', 'ssws-blocks-container')
 	],
 
 	attributes: blockAttributes,
@@ -294,9 +295,6 @@ registerBlockType('ssws-blocks/ssws-container', {
 			/Container>
 		);
 	},
-
-	// deprecated: deprecated,
-
 });
 
 function dimRatioToClass(ratio) {
