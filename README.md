@@ -1,22 +1,26 @@
 # SSWS Gutenberg Blocks Container
-*This is just a prototype for now*
+
+_This is just a prototype for now_
 **Do NOT use into production**
 Gutenberg blocks container helps you create useful and reusable front-end templates with the new WordPress editor.
 
 # How to use `Blocks Container`
+
 1. Select **SSWS Blocks Container** from the Common blocks list
-2. Within the container create your strucutre/template
+2. Within the container create your structure/template
 3. Save it as re-usable template
 4. Right now if you use it in another post/page, unless you want to change it across all the site, you need to convert it into blocks
 5. Hopefully in the future I will be able to create indpendent instances of the template each time the re-usable block gets called in a new post/page
 
 ### **NPM instructions**
+
 ```
 $ npm install
 $ npm run build
 ```
 
 ### Use this snippet in functions.php of your theme to avoid plugin implementation
+
 ```
 /**
  * Enqueue custom Gutenberg block scripts.
@@ -31,7 +35,10 @@ add_action( 'admin_enqueue_scripts', 'ssws_blocks_editor_assets' );
 ```
 
 ### Todo
+
 - Remove REACT functions and unused portions
+- Restore CSS section
+- Empower video-background
 - ~~Clean-up messy code and comments~~
 - Review/Restore css creation
 - Refine instructions
@@ -44,5 +51,5 @@ add_action( 'admin_enqueue_scripts', 'ssws_blocks_editor_assets' );
 - ~~`browserSync.reload` stops recursive tasks~~
 - ~~Re-organize modules order~~
 - ~~Remove previous assets and scripts loaded for removed features~~
-- Open WordPRess Core Track Ticket
+- Open WordPress Core Track Ticket
 - How to make this re-usable template a single instance once opened in another page/post?
