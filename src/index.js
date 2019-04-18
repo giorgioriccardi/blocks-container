@@ -8,19 +8,13 @@ import Inspector from './blocks-container/components/inspector';
 import Container from './blocks-container/components/container';
 
 // Components
-const {
-	__
-} = wp.i18n;
+const { __ } = wp.i18n;
 
 // Extend component
-const {
-	Component
-} = wp.element; // Import the element creator function (React abstraction layer)
+const { Component } = wp.element; // Import the element creator function (React abstraction layer)
 
 // Register block
-const {
-	registerBlockType
-} = wp.blocks;
+const { registerBlockType } = wp.blocks;
 
 // Register editor components
 const {
@@ -29,7 +23,7 @@ const {
 	BlockAlignmentToolbar,
 	MediaUpload,
 	RichText,
-	InnerBlocks,
+	InnerBlocks
 } = wp.editor;
 
 // Register components
@@ -39,63 +33,61 @@ const {
 	IconButton,
 	Dashicon,
 	withState,
-	Toolbar,
+	Toolbar
 } = wp.components;
 
 const blockAttributes = {
 	containerPaddingTop: {
-		type: 'number',
+		type: 'number'
 	},
 	containerPaddingRight: {
-		type: 'number',
+		type: 'number'
 	},
 	containerPaddingBottom: {
-		type: 'number',
+		type: 'number'
 	},
 	containerPaddingLeft: {
-		type: 'number',
+		type: 'number'
 	},
 	containerMarginTop: {
-		type: 'number',
+		type: 'number'
 	},
 	containerMarginBottom: {
-		type: 'number',
+		type: 'number'
 	},
 	containerWidth: {
-		type: 'string',
+		type: 'string'
 	},
 	containerMaxWidth: {
 		type: 'number',
-		default: 1600,
+		default: 1600
 	},
 	containerBackgroundColor: {
-		type: 'string',
+		type: 'string'
 	},
 	containerImgURL: {
 		type: 'string',
 		source: 'attribute',
 		attribute: 'src',
-		selector: 'img',
+		selector: 'img'
 	},
 	containerImgID: {
-		type: 'number',
+		type: 'number'
 	},
 	containerImgAlt: {
 		type: 'string',
 		source: 'attribute',
 		attribute: 'alt',
-		selector: 'img',
+		selector: 'img'
 	},
 	containerDimRatio: {
 		type: 'number',
-		default: 50,
-	},
+		default: 50
+	}
 };
 
 class SSWSBlocksContainer extends Component {
-
 	render() {
-
 		// Setup the attributes
 		const {
 			attributes: {
@@ -111,7 +103,7 @@ class SSWSBlocksContainer extends Component {
 				containerImgURL,
 				containerImgID,
 				containerImgAlt,
-				containerDimRatio,
+				containerDimRatio
 			},
 			attributes,
 			isSelected,
@@ -124,81 +116,59 @@ class SSWSBlocksContainer extends Component {
 			setAttributes({
 				containerImgID: img.id,
 				containerImgURL: img.url,
-				containerImgAlt: img.alt,
+				containerImgAlt: img.alt
 			});
 		};
 
 		return [
 			// Show the alignment toolbar on focus
-			<
-			BlockControls >
-			<
-			BlockAlignmentToolbar
-			value = {
-				containerWidth
-			}
-			onChange = {
-				containerWidth => setAttributes({
-					containerWidth
-				})
-			}
-			controls = {
-				['center', 'full']
-			}
-			/> <
-			/BlockControls>,
+			<BlockControls>
+				<BlockAlignmentToolbar
+					value={containerWidth}
+					onChange={containerWidth =>
+						setAttributes({
+							containerWidth
+						})
+					}
+					controls={['center', 'full']}
+				/>{' '}
+			</BlockControls>,
 			// Show the block controls on focus
-			<
-			Inspector {
-				...{
+			<Inspector
+				{...{
 					setAttributes,
 					...this.props
-				}
-			}
+				}}
 			/>,
 			// Show the container markup in the editor
-			<
-			Container {
-				...this.props
-			} >
-			<
-			div className = "ssws-container-inside" > {
-				containerImgURL && !!containerImgURL.length && ( <
-					div className = "ssws-container-image-wrap" >
-					<
-					img className = {
-						classnames(
-							'ssws-container-image',
-							dimRatioToClass(containerDimRatio), {
-								'has-background-dim': containerDimRatio !== 0,
-							}
-						)
-					}
-					src = {
-						containerImgURL
-					}
-					alt = {
-						containerImgAlt
-					}
-					/> <
-					/div>
-				)
-			}
-
-			<
-			div
-			className = "ssws-container-content"
-			style = {
-				{
-					maxWidth: `${containerMaxWidth}px`,
-				}
-			} >
-			<
-			InnerBlocks / >
-			<
-			/div> <
-			/div> <
-			/Container>
+			<Container {...this.props}>
+				<div className='ssws-container-inside'>
+					{' '}
+					{containerImgURL && !!containerImgURL.length && (
+						<div className='ssws-container-image-wrap'>
+							<img
+								className={classnames(
+									'ssws-container-image',
+									dimRatioToClass(containerDimRatio),
+									{
+										'has-background-dim': containerDimRatio !== 0
+									}
+								)}
+								src={containerImgURL}
+								alt={containerImgAlt}
+							/>{' '}
+						</div>
+					)}
+					<div
+						className='ssws-container-content'
+						style={{
+							maxWidth: `${containerMaxWidth}px`
+						}}
+					>
+						<InnerBlocks />
+					</div>{' '}
+				</div>{' '}
+			</Container>
 		];
 	}
 }
@@ -206,7 +176,10 @@ class SSWSBlocksContainer extends Component {
 // Register the block
 registerBlockType('ssws-blocks/ssws-container', {
 	title: __('SSWS Blocks Container', 'ssws-blocks-container'),
-	description: __('Add a blocks container to wrap several blocks in a parent container.', 'ssws-blocks-container'),
+	description: __(
+		'Add a blocks container to wrap several blocks in a parent container.',
+		'ssws-blocks-container'
+	),
 	icon: 'smiley',
 	category: 'common',
 	keywords: [
@@ -217,10 +190,12 @@ registerBlockType('ssws-blocks/ssws-container', {
 
 	attributes: blockAttributes,
 
-	getEditWrapperProps({
-		containerWidth
-	}) {
-		if ('left' === containerWidth || 'right' === containerWidth || 'full' === containerWidth) {
+	getEditWrapperProps({ containerWidth }) {
+		if (
+			'left' === containerWidth ||
+			'right' === containerWidth ||
+			'full' === containerWidth
+		) {
 			return {
 				'data-align': containerWidth
 			};
@@ -231,8 +206,7 @@ registerBlockType('ssws-blocks/ssws-container', {
 	edit: SSWSBlocksContainer,
 
 	// Save the attributes and markup
-	save: function (props) {
-
+	save: function(props) {
 		// Setup the attributes
 		const {
 			containerPaddingTop,
@@ -247,64 +221,53 @@ registerBlockType('ssws-blocks/ssws-container', {
 			containerImgURL,
 			containerImgID,
 			containerImgAlt,
-			containerDimRatio,
+			containerDimRatio
 		} = props.attributes;
 
 		// Save the block markup for the front end
-		return ( <
-			Container {
-				...props
-			} >
-			<
-			div className = "ssws-container-inside" > {
-				containerImgURL && !!containerImgURL.length && ( <
-					div className = "ssws-container-image-wrap" >
-					<
-					img className = {
-						classnames(
-							'ssws-container-image',
-							dimRatioToClass(containerDimRatio), {
-								'has-background-dim': containerDimRatio !== 0,
-							}
-						)
-					}
-					src = {
-						containerImgURL
-					}
-					alt = {
-						containerImgAlt
-					}
-					/> <
-					/div>
-				)
-			}
-
-			<
-			div className = "ssws-container-content"
-			style = {
-				{
-					maxWidth: `${containerMaxWidth}px`,
-				}
-			} >
-			<
-			InnerBlocks.Content / >
-			<
-			/div> <
-			/div> <
-			/Container>
+		return (
+			<Container {...props}>
+				<div className='ssws-container-inside'>
+					{' '}
+					{containerImgURL && !!containerImgURL.length && (
+						<div className='ssws-container-image-wrap'>
+							<img
+								className={classnames(
+									'ssws-container-image',
+									dimRatioToClass(containerDimRatio),
+									{
+										'has-background-dim': containerDimRatio !== 0
+									}
+								)}
+								src={containerImgURL}
+								alt={containerImgAlt}
+							/>{' '}
+						</div>
+					)}
+					<div
+						className='ssws-container-content'
+						style={{
+							maxWidth: `${containerMaxWidth}px`
+						}}
+					>
+						<InnerBlocks.Content />
+					</div>{' '}
+				</div>{' '}
+			</Container>
 		);
-	},
+	}
 });
 
 function dimRatioToClass(ratio) {
-	return (ratio === 0 || ratio === 50) ?
-		null :
-		'has-background-dim-' + (10 * Math.round(ratio / 10));
+	return ratio === 0 || ratio === 50
+		? null
+		: 'has-background-dim-' + 10 * Math.round(ratio / 10);
 }
 
 function backgroundImageStyles(url) {
-	return url ? {
-			backgroundImage: `url(${ url })`
-		} :
-		undefined;
+	return url
+		? {
+				backgroundImage: `url(${url})`
+		  }
+		: undefined;
 }

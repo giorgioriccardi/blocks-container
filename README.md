@@ -10,7 +10,7 @@ Gutenberg blocks container helps you create useful and reusable front-end templa
 2. Within the container create your structure/template
 3. Save it as re-usable template
 4. Right now if you use it in another post/page, unless you want to change it across all the site, you need to convert it into blocks
-5. Hopefully in the future I will be able to create indpendent instances of the template each time the re-usable block gets called in a new post/page
+5. Hopefully in the future I will be able to create independent instances of the template each time the re-usable block gets called in a new post/page
 
 ### **NPM instructions**
 
